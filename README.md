@@ -6,12 +6,11 @@ This is an API for a social network web application where users can share their 
 ***
 ### Table of Contents  
 1. [Installation]()
-2. [Usage]()
-3. [Screenshot]()
-4. [Video Walkthrough]()
-5. [Features]()
-6. [Contributors]()
-7. [Questions]()  
+2. [Screenshots]()
+3. [Video Walkthrough]()
+4. [Features]()
+5. [Contributors]()
+6. [Questions]()  
 
 ***
 ### Installation 
@@ -44,9 +43,9 @@ This animation shows the POST and DELETE routes for reactions to thoughts:
 ![Screenshot API Routes as Tested in Insomnia Core]()  
 
 ***
-### Video Walkthrough
-A video walkthrough of API Routes in Insomnia Core
-[Video]()
+### Video Walkthrough   
+A video walkthrough of API Routes in Insomnia Core   
+[Video]()   
 
 ***
 ### Features  
