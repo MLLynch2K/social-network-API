@@ -61,4 +61,4 @@ Michele Lee Lynch
 
 ***
 ### Questions  
-[My GitHub:](https://github.com/MLLynch2K)   
+[Contact Me](https://github.com/MLLynch2K)   
