@@ -1,0 +1,24 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "This is an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MLLynch2K/social-network-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MLLynch2K/social-network-API/issues"
+  },
+  "homepage": "https://github.com/MLLynch2K/social-network-API#readme",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.19"
+  }
+}
