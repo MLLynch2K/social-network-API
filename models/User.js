@@ -8,10 +8,12 @@ const UserSchema = new Schema({
       trim: true
     },
     email: {
-      type: String,
-      required: true,
-      trim: true,
-      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            match: [/^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/]     
+        },
     },
     thoughts: [
         {
@@ -35,10 +37,8 @@ const UserSchema = new Schema({
   }
 );
 
-// create the User Model using the Schema
 const User = model('User', UserSchema);
 
-// get total count of comments and replies on retrieval
 UserSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
