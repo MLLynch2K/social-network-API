@@ -21,25 +21,8 @@ Install Moment.js
 Run 'npm start' to enter the application   
 
 ***
-### Screenshots  
-These screenshots show the API routes being tested in Insomnia Core.   
-
-This animation shows the GET routes to return all users:   
-![Screenshot API Routes as Tested in Insomnia Core]()  
-
-This animation shows the GET routes to return single user:     
-![Screenshot API Routes as Tested in Insomnia Core]()  
-
-This animation shows the POST, PUT, and DELETE routes for users:   
-![Screenshot API Routes as Tested in Insomnia Core]()  
-
-This animation shows the POST, PUT, and DELETE routes for thoughts:   
-![Screenshot API Routes as Tested in Insomnia Core]()  
-
-This animation shows the POST and DELETE routes for user's friend list:   
-![Screenshot API Routes as Tested in Insomnia Core]()  
-
-This animation shows the POST and DELETE routes for reactions to thoughts:   
+### Screenshot  
+This is a screenshot showing the tests in Insomnia Core.   
 ![Screenshot API Routes as Tested in Insomnia Core]()  
 
 ***
