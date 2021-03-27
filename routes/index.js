@@ -1,13 +1,10 @@
-const router = require('express').Router()
+const router = require('express').Router();
+const apiRoutes = require('./api');
 
-// import API routes
-const apiRoutes = require('./api')
-
-// add prefix `/api` to api routes imported
-router.use('/', apiRoutes)
+router.use('/api', apiRoutes);
 
 router.use((req, res) => {
-    res.status(404).send('<h1>😝 404 Error!</h1>');
+  res.status(404).send('<h1>😝 404 Error!</h1>');
 });
 
-module.exports = router
+module.exports = router;
