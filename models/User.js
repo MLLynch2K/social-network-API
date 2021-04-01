@@ -1,46 +1,52 @@
-const { Schema, model } = require('mongoose');
-const moment = require('moment');
+const { Schema, model } = require("mongoose");
+const Thought = require("./thought");
 
-const UserSchema = new Schema({
+const UserSchema = new Schema(
+  {
     username: {
       type: String,
+      unique: true,
       required: true,
-      trim: true
+      trim: true,
     },
     email: {
-        email: {
-            type: String,
-            required: true,
-            unique: true,
-            match: [/^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/]     
-        },
+      type: String,
+      required: true,
+      unique: true,
+      match: [
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+        "Please fill a valid email address",
+      ],
     },
     thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Thought'
-        }
-      ],
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Thought",
+      },
+    ],
     friends: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    ]
-    },
-    { 
-    toJSON: {
-      virtuals: true,
-      getters: true
-    },
-    id: false
-  }
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+  },
+  { toJSON: { virtuals: true }, id: false }
 );
 
-const User = model('User', UserSchema);
+UserSchema.post("findOneAndDelete", function (doc) {
+  const userThoughtArr = doc.thoughts;
+  console.log(userThoughtArr);
 
-UserSchema.virtual('friendCount').get(function() {
+  Thought.deleteMany({ _id: { $in: userThoughtArr } })
+    .then((result) => console.log("Thoughts deleted!", result))
+    .catch((err) => console.log(err));
+});
+
+UserSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
+
+const User = model("User", UserSchema);
 
 module.exports = User;

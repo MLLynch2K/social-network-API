@@ -1,7 +1,9 @@
-const moment = require('moment')
+var parseJSON = require("date-fns/parseJSON");
+var format = require("date-fns/format");
 
-const dateformatter = (timeStamp) => {
-    return moment(timeStamp).format('LLLL')
+function dateFormat(unformatedDate) {
+  var parsedDate = parseJSON(unformatedDate);
+  return format(parsedDate, "yyyy-MM-dd");
 }
 
-module.exports = dateformatter
+module.exports = dateFormat;
