@@ -20,7 +20,7 @@ mongoose.set('debug', true);
 app.listen(PORT, () => 
 
 console.log(""),
-console.log(`🪐 Connected on localhost Port: ${PORT}`),
+console.log(`Connected on localhost Port: ${PORT}`),
 console.log("")
 
 );
